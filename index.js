@@ -18,8 +18,9 @@ import TabBasic from './test/TabNavigatorBasic';
 import Root from './test/root';
 import RootRedux from './test/redux/root';
 import ControlPanel from './test/react-redux/views/ControlPanel';
+import StorageBasic from './test/StorageBasic';
 
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => ControlPanel);
+AppRegistry.registerComponent(appName, () => StorageBasic);
