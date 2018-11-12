@@ -6,8 +6,6 @@ export default class StorageBasic extends React.Component {
          super(props);
          this.state = {
             "UID": "",
-
-
          };
          let UID123_object = {
              name: 'Chris',

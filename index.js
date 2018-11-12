@@ -23,4 +23,4 @@ import StorageBasic from './test/StorageBasic';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => StorageBasic);
+AppRegistry.registerComponent(appName, () => ControlPanel);
