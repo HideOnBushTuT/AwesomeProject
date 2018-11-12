@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 import reducer  from './Reducer';
 
@@ -8,7 +8,18 @@ const initValues = {
     'third': 40,
 };
 
-const store = createStore(reducer, initValues);
+const logger = store => next => action => {
+    console.group(action.type)
+    console.info('dispatching', action)
+    let result = next(action)
+    console.log('next state', store.getState())
+    console.groupEnd()
+    return result
+}
+
+
+
+const store = createStore(reducer, initValues, applyMiddleware(logger));
 
 export default store;
 
