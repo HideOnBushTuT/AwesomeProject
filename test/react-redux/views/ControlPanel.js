@@ -11,7 +11,7 @@ export default class ControlPanel extends React.Component {
     render() {
         return (
             <Provider store={Store}>
-                <View style={{ flex: 1, marginTop: 64, marginLeft: 20, marginRight: 20}}>
+                <View style={{ flex: 1, marginTop: 64, marginLeft: 20, marginRight: 20, justifyContent: 'center', alignItems: 'center'}}>
                     <Counter caption="first" />
                     <Counter caption="second" />
                     <Counter caption='third' />
