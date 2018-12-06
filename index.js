@@ -7,7 +7,7 @@ import PizzaTranslator from './test/PizzaTranslator';
 import ButtonBasics from './test/ButtonTest';
 import Touchables from './test/Touchables';
 import IScrolledDownAndWhatHappenedNextShockedMe from './test/ScrollViewTest';
-import FlatListBasic from './test/FlatListTest';
+// import FlatListBasic from './test/FlatListTest';
 import SectionListTest from './test/SectionListTest';
 import FetchExample from './test/FetchExample';
 import PickerBasic from './test/Picker';
@@ -19,8 +19,13 @@ import Root from './test/root';
 import RootRedux from './test/redux/root';
 import ControlPanel from './test/react-redux/views/ControlPanel';
 import StorageBasic from './test/StorageBasic';
-
+import PromiseBasic from './test/PromiseBasic';
+import SwipeableFlatListBasic from './test/SwipeableFlatListBasic';
+import ImmutableBasic from './test/ImmutableBasic';
+import VictoryNativeBasic from './test/VictoryNativeBasic';
+// import ReactNativeDataTableBasic from 'test/ReactNativeDataTableBasic';
+import TableComponentBasic from './test/TableComponentBasic';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => ControlPanel);
+AppRegistry.registerComponent(appName, () => TableComponentBasic);
