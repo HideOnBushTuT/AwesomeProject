@@ -281,7 +281,8 @@ export default class CustomTheme extends React.Component {
 
             // HORIZONTAL LINE
             lineThree: {
-                data: { stroke: "#e95f46", strokeWidth: 2 }
+                data: { stroke: "#e95f46", strokeWidth: 2 },
+                fill: BLUE_COLOR,
             }
         };
     }

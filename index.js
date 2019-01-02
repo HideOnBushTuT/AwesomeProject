@@ -25,7 +25,13 @@ import ImmutableBasic from './test/ImmutableBasic';
 import VictoryNativeBasic from './test/VictoryNativeBasic';
 // import ReactNativeDataTableBasic from 'test/ReactNativeDataTableBasic';
 import TableComponentBasic from './test/TableComponentBasic';
-
+import CustomTheme from "./test/VictoryChart";
+import BloodPressure from './test/PatientPage/BloodPressurePage/BloodPressure';
+import BloodSugar from './test/PatientPage/BloodSuger/BloodSugar';
+import PatientPage from './test/PatientPage/PatientPage';
+import SvgBasic from './test/SvgBasic'
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => TableComponentBasic);
+
+AppRegistry.registerComponent(appName, () => Touchables);
+

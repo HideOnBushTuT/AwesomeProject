@@ -77,14 +77,14 @@ class VictoryNativeCustomChart extends React.Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                {/*<VictoryChart>*/}
-                    {/*/!*<VictoryBar />*!/*/}
-                    {/*<VictoryLine />*/}
-                {/*</VictoryChart>*/}
+                <VictoryChart>
+                    {/*<VictoryBar />*/}
+                    <VictoryLine />
+                </VictoryChart>
 
-                {/*<VictoryChart>*/}
-                    {/*<VictoryCandlestick data={candleData} />*/}
-                {/*</VictoryChart>*/}
+                <VictoryChart>
+                    <VictoryCandlestick data={candleData} />
+                </VictoryChart>
 
                 {/*<VictoryChart domain={{ x: [0, 4] }}>*/}
                     {/*<VictoryGroup*/}
@@ -178,7 +178,7 @@ class VictoryNativeCustomChart extends React.Component {
                     {/*/>*/}
                 {/*</VictoryChart>*/}
                 <VictoryChart
-                    theme={VictoryTheme.material}
+                    theme={VictoryTheme.grayscale}
                 >
                     <VictoryLine
                         style={{
@@ -210,24 +210,24 @@ class VictoryNativeCustomChart extends React.Component {
 
                 <VictoryChart>
                     <VictoryStack>
-                        {/*<VictoryArea*/}
-                            {/*data={[*/}
-                                {/*{ x: "a", y: 2 },*/}
-                                {/*{ x: "b", y: 3 },*/}
-                                {/*{ x: "c", y: 5 },*/}
-                                {/*{ x: "d", y: 4 },*/}
-                                {/*{ x: "e", y: 7 }*/}
-                            {/*]}*/}
-                        {/*/>*/}
-                        {/*<VictoryArea*/}
-                            {/*data={[*/}
-                                {/*{ x: "a", y: 1 },*/}
-                                {/*{ x: "b", y: 4 },*/}
-                                {/*{ x: "c", y: 5 },*/}
-                                {/*{ x: "d", y: 7 },*/}
-                                {/*{ x: "e", y: 5 }*/}
-                            {/*]}*/}
-                        {/*/>*/}
+                        <VictoryArea
+                            data={[
+                                { x: "a", y: 2 },
+                                { x: "b", y: 3 },
+                                { x: "c", y: 5 },
+                                { x: "d", y: 4 },
+                                { x: "e", y: 7 }
+                            ]}
+                        />
+                        <VictoryArea
+                            data={[
+                                { x: "a", y: 1 },
+                                { x: "b", y: 4 },
+                                { x: "c", y: 5 },
+                                { x: "d", y: 7 },
+                                { x: "e", y: 5 }
+                            ]}
+                        />
                         <VictoryArea
                             data={[
                                 { x: "a", y: 3 },
@@ -270,4 +270,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default VictoryNativeBasic;
+export default VictoryNativeCustomChart;
