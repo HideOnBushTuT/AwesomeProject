@@ -33,5 +33,5 @@ import SvgBasic from './test/SvgBasic'
 import {name as appName} from './app.json';
 
 
-AppRegistry.registerComponent(appName, () => Touchables);
+AppRegistry.registerComponent(appName, () => Home);
 
