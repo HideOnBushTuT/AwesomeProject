@@ -31,7 +31,9 @@ import BloodSugar from './test/PatientPage/BloodSuger/BloodSugar';
 import PatientPage from './test/PatientPage/PatientPage';
 import SvgBasic from './test/SvgBasic'
 import {name as appName} from './app.json';
+import TestCell from './test/TestCell'
+import TestScrollView from './test/RNTScrollView'
 
 
-AppRegistry.registerComponent(appName, () => Home);
+AppRegistry.registerComponent(appName, () => TestScrollView);
 
