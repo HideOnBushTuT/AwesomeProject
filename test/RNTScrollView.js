@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, requireNativeComponent } from 'react-native'
+import { View, Text, requireNativeComponent, ScrollView } from 'react-native'
 import PropTypes from 'prop-types'
 
 var RNTScrollView = requireNativeComponent('RNTScrollView')
@@ -16,23 +16,32 @@ export default class TestScrollView extends React.Component {
     }
 
     render() {
-        return (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',  }}>
+        return (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
             <RNTScrollView
-                style={{flex: 1, backgroundColor: 'orange', width: 200, height: 500, justifyContent: 'center', alignItems: 'center' }}
+                style={{ backgroundColor: 'orange', width: 300, height: 500, justifyContent: 'center', alignItems: 'center' }}
                 onScrolling={this._onScroll}
                 showsVerticalScrollIndicator={true}
                 scrollEnabled={true}
             >
-                <View style={{ width: 100, height: 2000, justifyContent: 'center', alignItems: 'center', backgroundColor: 'green' }}>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                        <Text style={{ marginTop: 50 }}>This is a scrollview</Text>
-                </View>
+                {/* <View style={{ width: 300, eight: 200, justifyContent: 'center', alignItems: 'center', backgroundColor: 'green' }}> */}
+                    {/* <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text> */}
+                    <ScrollView style={{ width: 100, height: 1600, backgroundColor: 'red', marginTop: 100 }}>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                        <Text style={{ marginTop: 200 }}>This is a scrollview</Text>
+                    </ScrollView>
+                {/* </View> */}
             </RNTScrollView>
         </View>)
     }

@@ -7,8 +7,9 @@
 //
 
 #import <React/RCTViewManager.h>
+#import <React/RCTScrollView.h>
 #import "RNTScrollView.h"
 
 @interface RNTScrollViewManager : RCTViewManager <UIScrollViewDelegate>
-
+@property (nonatomic, strong) RNTScrollView *rootScrollView;
 @end

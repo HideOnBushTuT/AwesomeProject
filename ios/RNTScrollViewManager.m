@@ -8,6 +8,13 @@
 
 #import "RNTScrollViewManager.h"
 
+@interface RNTScrollViewManager ()
+@property (nonatomic, assign) BOOL canParentViewScroll;
+@property (nonatomic, assign) BOOL canChildViewScroll;
+@property (nonatomic, assign) CGFloat headerStickyHeight;
+@end
+
+
 @implementation RNTScrollViewManager
 
 RCT_EXPORT_MODULE(RNTScrollView)
@@ -21,10 +28,8 @@ RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
   scrollView.delegate = self;
   scrollView.scrollEnabled = YES;
   scrollView.contentSize = CGSizeMake(200, 2000);
-  UIView *sub = [[UIView alloc] init];
-  sub.frame = CGRectMake(100, 200, 50, 40);
-  sub.backgroundColor = [UIColor greenColor];
-  [scrollView addSubview:sub];
+  self.rootScrollView = scrollView;
+  self.headerStickyHeight = 100.0f;
   return scrollView;
 }
 
@@ -32,11 +37,27 @@ RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
   if (!scrollView.onScrolling) {
     return;
   }
-  NSLog(@"scrollView's childs: %@", scrollView.subviews);
-  NSLog(@"subview of RCTView: %@", scrollView.subviews[1].subviews);
-  CGFloat x = scrollView.contentOffset.x;
-  scrollView.onScrolling(@{
-                        @"contentOffSet":@(x),
-  });
+  RCTScrollView *childScrollView = scrollView.subviews[1];
+  scrollView.onScrolling(@{@"contentOffSet":@(scrollView.contentOffset.y)});
+//  if (scrollView == self.rootScrollView) {
+//    if (!self.canParentViewScroll) {
+//      [scrollView setContentOffset:CGPointMake(0, self.headerStickyHeight) animated:NO];
+//      self.canChildViewScroll = YES;
+//    } else if (scrollView.contentOffset.y > self.headerStickyHeight) {
+//      [scrollView setContentOffset:CGPointMake(0, self.headerStickyHeight) animated:NO];
+//      self.canParentViewScroll = NO;
+//      self.canChildViewScroll = YES;
+//    }
+//  } else {
+//    if (!self.canChildViewScroll) {
+//      [childScrollView.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+//    } else if (scrollView.contentOffset.y <= 0) {
+//      self.canChildViewScroll = NO;
+//      self.canParentViewScroll = YES;
+//    }
+//  }
 }
+
+
+
 @end
