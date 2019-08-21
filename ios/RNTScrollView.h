@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <React/RCTComponent.h>
 
-@interface RNTScrollView : UIScrollView <UIGestureRecognizerDelegate>
+@interface RNTScrollView : UIScrollView
 @property (nonatomic, copy) RCTBubblingEventBlock onScrolling;
 @end
 

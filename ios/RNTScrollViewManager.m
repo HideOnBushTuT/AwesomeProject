@@ -19,6 +19,7 @@
 
 RCT_EXPORT_MODULE(RNTScrollView)
 RCT_EXPORT_VIEW_PROPERTY(showsVerticalScrollIndicator, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(contentSize, CGSize)
 RCT_EXPORT_VIEW_PROPERTY(onScrolling, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
 
@@ -27,7 +28,7 @@ RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
   RNTScrollView *scrollView = [[RNTScrollView alloc] init];
   scrollView.delegate = self;
   scrollView.scrollEnabled = YES;
-  scrollView.contentSize = CGSizeMake(200, 2000);
+//  scrollView.contentSize = CGSizeMake(200, 2000);
   self.rootScrollView = scrollView;
   self.headerStickyHeight = 100.0f;
   return scrollView;
@@ -39,6 +40,16 @@ RCT_EXPORT_VIEW_PROPERTY(scrollEnabled, BOOL)
   }
   RCTScrollView *childScrollView = scrollView.subviews[1];
   scrollView.onScrolling(@{@"contentOffSet":@(scrollView.contentOffset.y)});
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 //  if (scrollView == self.rootScrollView) {
 //    if (!self.canParentViewScroll) {
 //      [scrollView setContentOffset:CGPointMake(0, self.headerStickyHeight) animated:NO];
